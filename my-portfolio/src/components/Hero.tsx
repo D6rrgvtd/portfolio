@@ -1,5 +1,5 @@
 
-import  {profile} from "../Data/portfolio";
+import  {profile} from "../data/portfolio";
 
 export default function Hero(){
     return(

@@ -17,6 +17,24 @@ export default function WorkDetail(){
                 <Link to="/#works" className="Wd-back">
                   ←作品一覧に戻る
                 </Link>
+
+                <div className="Wd-hero">
+                    <div className="wd-hero-thumbnail">
+                        <SafeImg
+                        src={Work.thumbnail}
+                        alt={Work.title}
+                        fallback="No Image..."
+                        />
+                    </div>
+
+                </div>
+
+
+                <Section title="基本情報">
+                    <dl className="wd-meta-grid">
+                        <MetaRow label="製作期間" value={Work.period}/>
+                    </dl>
+                </Section>
             </div>
         </div>
     )
