@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaSun, FaMoon } from "react-icons/fa"; // アイコンのインポートを追加
 import { profile } from "../data/portfolio";
 
 interface Props {
@@ -7,21 +8,28 @@ interface Props {
 }
 
 export default function Header({ theme, onThemeToggle }: Props) {
-  const navItems = [{ label: "About", hash: "about" }];
+  const navItems = [
+    { label: "About", hash: "about" },
+    { label: "Skills", hash: "skills" },
+    { label: "Works", hash: "works" },
+    { label: "Certs#", hash: "certs" },
+    { label: "Contact", hash: "contact" },
+  ];
 
   return (
     <header className="header">
       <div className="container">
         <div className="header-inner">
-          {/* ロゴ表示部分 */}
+          
           <Link to="/" className="header-logo">
-            {profile.nameEn.split(" ")[0]}<span>.</span>
+            {profile.nameEn.split(" ")[0]}<span></span>
           </Link>
+          
           <nav>
             <ul className="header-nav">
               {navItems.map((item) => (
                 <li key={item.label}>
-                  {/* /#about の形式でその表示要素へ移動出来るようにする */}
+                  {}
                   <Link to={`/#${item.hash}`}>
                     {item.label}
                   </Link>
@@ -30,13 +38,12 @@ export default function Header({ theme, onThemeToggle }: Props) {
             </ul>
           </nav>
 
-          {/* 👇 受け取った theme と onThemeToggle をここで使用します */}
-          <button onClick={onThemeToggle} className="theme-toggle-btn">
-            {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
+          {}
+          <button onClick={onThemeToggle} className="theme-toggle">
+            {theme === "dark" ? <FaSun /> : <FaMoon />}
           </button>
         </div>
       </div>
-     
     </header>
   );
 }

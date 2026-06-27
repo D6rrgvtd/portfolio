@@ -22,3 +22,9 @@ export const skills = [
   { name: "Node.js", category: "backend" },
   { name: "Git", category: "tool" },
 ];
+export const works = [
+  {id: 1,
+    Title: "MURAWA",
+
+  }
+];

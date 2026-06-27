@@ -8,11 +8,15 @@ import SkillCard from "./SkillCard";
 interface SkillItem {
   name: string;
   category: string;
-  // 他に icon や level などがあればここに追加してください
+  icon?: string;  // 必要に応じてオプショナルで追加
+  level?: string; // 必要に応じてオプショナルで追加
 }
 
+// 👇 CATEGORY_LABELS のキーが文字列であることを明示するための型キャスト用
+const labels = CATEGORY_LABELS as Record<string, string>;
+
 export default function Skills() {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState<string>("all");
   
   // 👇 skills を「SkillItemの配列」としてキャスト（明示）します
   const skillsData = skills as SkillItem[];
@@ -38,7 +42,8 @@ export default function Skills() {
               className={`skill-filter-btn ${activeCategory === cat ? "active" : ""}`}
               onClick={() => setActiveCategory(cat)}
             >
-              {CATEGORY_LABELS[cat] ?? cat}
+              {/* 👇 型安全にラベルを取得できるように修正 */}
+              {labels[cat] ?? cat}
             </button>
           ))}
         </div>
