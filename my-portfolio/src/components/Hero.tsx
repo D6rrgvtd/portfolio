@@ -1,4 +1,3 @@
-import React from 'react';
 
 // 1. profileの型（構造）を定義してエラーを解消
 interface ProfileType {
