@@ -1,37 +1,60 @@
-import React from 'react';
-import '../styles/about.css';
+// src/components/About.tsx
 
-export const About: React.FC = () => {
-  return (
-    <section className="about-section">
-      <div className="about-card">
-        <h3>About Me</h3>
-        
-        <p className="about-bio">
-          ここに自己紹介の文章が入ります。{"\n"}
-          Webフロントエンド開発を中心に、ReactやTypeScriptを学んでいます。{"\n"}
-          ものづくりが好きで、使いやすさにこだわったUI設計を意識しています。
-        </p>
+import { profile, timeline } from "../data/portfolio";
 
-        <div className="profile-school">
-          <div className="profile-school-row">
-            <span className="profile-label">学校名</span>
-            <span className="profile-value">京都デザイン＆テクノロジー専門学校 ゲームワールド</span>
-          </div>
+export default function About(){
+    return(
+        <section className="section" id="about">
+            <div className="container">
+                <h2 className="section-title"><span>About</span></h2>
+                <p className="section-sub">自己紹介</p>
 
-          <div className="profile-school-row">
-            <span className="profile-label">期間</span>
-            <span className="profile-value">2024年4月 〜 現在在学中</span>
-          </div>
+                <div className="about-grid">
+                    <div className="about-card">
+                        <h3>Profile</h3>
+                        <p className="about-bio">
+                            {profile.bio}
+                        </p>
 
-          <div className="profile-school-row">
-            <span className="profile-label">専攻</span>
-            <span className="profile-value">ゲームプログラマー専攻</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+                        <dl className="profile-school">
+                            <div className="profile-school-row">
+                                <dt>学校</dt>
+                                <dd>{profile.school}</dd>
+                            </div>
+                            <div className="profile-school-row">
+                                <dt>学科</dt>
+                                <dd>{profile.department}</dd>
+                            </div>
+                            <div className="profile-school-row">
+                                <dt>卒業</dt>
+                                <dd className="profile-graduation">
+                                    {profile.graduationYear}
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
 
-export default About;
+                    <div className="about-card">
+                        <h3>Timeline</h3>
+                        <ul className="timeline">
+                            {timeline.map((item,index)=>(
+                                <li key={index}>
+                                    <p className="timeline-year">
+                                        {item.year}
+                                    </p>
+                                    <p className="timeline-event">
+                                        {item.event}
+                                    </p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </section>
+    )
+}
