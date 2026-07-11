@@ -1,22 +1,9 @@
 import { ReactNode } from 'react';
+import { Profile } from '../data/portfolio';
+import {FaEnvelope, FaGithub } from "react-icons/fa"; 
 import { FaGithub, FaXTwitter, FaEnvelope } from 'react-icons/fa6'; 
 
-interface LinkItem {
-    label: string;
-    icon: ReactNode;
-    href: string | null;
-}
 
-// 外部からプロフィールデータを受け取る想定のインターフェース
-interface ContactProps {
-    profile: {
-        links: {
-            github: string | null;
-            twitter: string | null;
-            email: string | null;
-        };
-    };
-}
 
 export default function Contact({ profile }: ContactProps) {
     const links: LinkItem[] = [
