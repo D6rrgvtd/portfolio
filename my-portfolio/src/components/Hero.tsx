@@ -1,24 +1,7 @@
+import { Profile } from "../data/portfolio";
+import SafeImg from "./SafeImg";
 
-// 1. profileの型（構造）を定義してエラーを解消
-interface ProfileType {
-    avatar?: string;
-    name?: string;
-    nameEn?: string;
-    role?: string;
-    motto?: string;
-}
 
-interface HeroProps {
-    profile: ProfileType;
-}
-
-// 2. SafeImageが見つからない場合のフォールバック（代わりの画像表示）を作成してエラーを解消
-const SafeImage = ({ src, alt, fallback }: { src?: string; alt?: string; fallback: string }) => {
-    if (!src) {
-        return <div className="avatar-fallback" style={{ width: 150, height: 150, borderRadius: '50%', background: '#ccc', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', color: '#fff', margin: '0 auto 20px' }}>{fallback}</div>;
-    }
-    return <img src={src} alt={alt} className="avatar-img" style={{ width: 150, height: 150, borderRadius: '50%', objectFit: 'cover', margin: '0 auto 20px', display: 'block' }} />;
-};
 
 export default function Hero({ profile }: HeroProps) {
     // profileが渡されなかった場合のフォールバック（エラー防止）
