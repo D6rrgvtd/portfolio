@@ -209,27 +209,15 @@ export const works: Work[] = [
   }, // 配列ごとに作品情報を作ってく.
 ]
 
-export const gameJams: GameJam[] =[
-  {
-    name: 'Global Game Jam 2025',
-    date: '2025年1月（48時間制作）',
-    theme: '「Bubble」→ 泡を使った物理パズルを制作',
-    description: '作品の説明...',
-    platform: ['WebGL', 'Windows'], // FIXME:設計ミスってる
-    role: 'プログラマー（物理演算・ステージ生成担当）',
-    team: '4名（PG×2・デザイナー×1・サウンド×1）',
-    result: null,                       // '総合2位' など、なければ null
-    url: 'https://itch.io/...',         // なければ null
-    reflection: '学び・振り返り...',
-  },
-]
+
+
 
 export const certifications: Certification[] = [
   {
-    name: 'ITパスポート',
-    date: '2024年10月合格',
-    category: '国家資格',
-    score: '665点',                     // なければ null
+    name: 'MOS Excel',
+    date: '2025年2月合格',
+    category: '民間資格',
+    score: '957点',                     // なければ null
     status: '取得済み',                 // '取得済み' | '受験予定' | '取得予定' | '学習中'
   },
 ]
