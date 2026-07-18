@@ -1,34 +1,23 @@
-import { ReactNode } from 'react';
-import { FaGithub, FaXTwitter, FaEnvelope } from 'react-icons/fa6'; 
+import type { ReactNode } from "react";
+import { profile } from "../data/portfolio"
+import { FaEnvelope, FaGithub } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
-interface LinkItem {
-    label: string;
-    icon: ReactNode;
-    href: string | null;
-}
 
-// 外部からプロフィールデータを受け取る想定のインターフェース
-interface ContactProps {
-    profile: {
-        links: {
-            github: string | null;
-            twitter: string | null;
-            email: string | null;
-        };
-    };
-}
 
-export default function Contact({ profile }: ContactProps) {
-    const links: LinkItem[] = [
-        { label: 'Github', icon: <FaGithub />, href: profile.links.github },
-        { label: 'X (旧Twitter)', icon: <FaXTwitter />, href: profile.links.twitter },
-        { label: 'Email', icon: <FaEnvelope />, href: profile.links.email },
-    ];
 
-    return (
+export default function Contact(){
+
+    const links:{ label: string; icon: ReactNode; href: string | null}[] = [
+        { label:'Github', icon: <FaGithub />, href: profile.links.github },
+        { label:'X (旧Twitter)', icon: <FaXTwitter />, href: profile.links.twitter },
+        { label:'Email', icon: <FaEnvelope />, href: profile.links.email },
+    ]
+
+    return(
         <section className="section" id="contact">
             <div className="container">
-                <div className="contact-inner">
+                <div contact-inner>
                     <h2 className="section-title">
                         <span>Contact</span>
                     </h2>
@@ -40,22 +29,26 @@ export default function Contact({ profile }: ContactProps) {
 
                     <div className="contact-links">
                         {links
-                            .filter((link): link is LinkItem & { href: string } => link.href !== null)
-                            .map((link) => (
-                                <a
-                                    key={link.label} 
-                                    href={link.href}
-                                    className="contact-link-item"
-                                    target={link.href.startsWith('mailto:') ? undefined : '_blank'}
-                                    rel="noreferrer"
+                            .filter((link): link is typeof link 
+                                & {href: string} =>link.href !== null)
+                            .map((link)=>(
+                            <a 
+                                key={link.label}
+                                href={link.href}
+                                className="contact-link-item"
+                                target={link.href.startsWith('mailto')?
+                                    undefined:'_blank'}
+                                rel="noreferrer"
                                 >
+                                <span className="contact-link-icon">
                                     {link.icon}
-                                    {link.label}
-                                </a>
-                            ))}
+                                </span>
+                                {link.label}
+                            </a>
+                        ))}
                     </div>
                 </div>
             </div>
         </section>
-    );
+    )
 }

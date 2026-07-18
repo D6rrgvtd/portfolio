@@ -1,13 +1,17 @@
-inport { certifications, type FcCameraIdentification, type CertStatus} from "../data/portdolio"
+// src/components/Certifications.tsx
+
+import { certifications, type Certification, type CertStatus } from "../data/portfolio"
 
 
-const Status_CONFIG:
-    Record<CretStatus, {Color:string; bg:string; border:string}> = {
-        '取得済み': { color:'#4ADE80', bg:'rgba(74,222,128,0.1)', border:'rgba(74,222,128,0.3)' },
-        '受験予定': { color:'#60A5FA', bg:'rgba(96,165,250,0.1)', border:'rgba(96,165,250,0.3)' },
-        '取得予定': { color:'#A78BFA', bg:'rgba(167,139,250,0.1)', border:'rgba(167,139,250,0.3)' },
-        '学習中': { color:'#FBBF24', bg:'rgba(251,191,36,0.1)', border:'rgba(251,191,36,0.3)' },
-} 
+// 文字色はテーマごとに base.css の --badge-* で切り替わる（ライトでは濃色化）.
+// 背景・枠線は薄いアルファのため両テーマ共通.
+const STATUS_CONFIG:
+    Record<CertStatus, {color:string; bg:string; border:string}> = {
+        '取得済み': { color:'var(--badge-amber)', bg:'#FBBF241A', border:'#FBBF244D' },
+        '受験予定': { color:'var(--badge-sky)', bg:'#38BDF81A', border:'#38BDF84D' },
+        '取得予定': { color:'var(--badge-indigo)', bg:'#818CF81A', border:'#818CF84D' },
+        '学習中': { color:'var(--badge-orange)', bg:'#F0932F1A', border:'#F0932F4D' },
+}
 
 // ステータスを取得、表示に変換する.
 function StatusBadge({status} : {status: CertStatus}){
@@ -42,6 +46,8 @@ function CertRow({cert} : {cert: Certification}){
         </div>
     )
 }
+
+
 
 export default function Certifications(){
     return(

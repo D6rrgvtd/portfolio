@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaSun, FaMoon } from "react-icons/fa"; // アイコンのインポートを追加
-import { profile } from "../data/portfolio";
+import { FaSun, FaMoon } from "react-icons/fa"; 
 
 interface Props {
   theme: string;
@@ -22,7 +21,7 @@ export default function Header({ theme, onThemeToggle }: Props) {
         <div className="header-inner">
           
           <Link to="/" className="header-logo">
-            {profile.nameEn.split(" ")[0]}<span></span>
+             Portfolio Sites
           </Link>
           
           <nav>
