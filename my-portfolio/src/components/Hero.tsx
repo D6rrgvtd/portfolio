@@ -1,18 +1,18 @@
-import { Profile } from "../data/portfolio";
+import { profile } from "../data/portfolio";
 import SafeImg from "./SafeImg";
 
 
 
-export default function Hero({ profile }: HeroProps) {
+export default function Hero() {
     // profileが渡されなかった場合のフォールバック（エラー防止）
-    if (!profile) return null;
+    
 
     return (
         <section className="hero section" id="hero">
             <div className="container">
 
                 {/* アバター画像表示 */}
-                <SafeImage
+                <SafeImg
                     src={profile.avatar}
                     alt={profile.name}
                     fallback={profile.name ? profile.name.charAt(0) : "T"}

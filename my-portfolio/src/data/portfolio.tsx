@@ -137,19 +137,19 @@ export const skills: Skill[] = [
 export const works: Work[] = [
   {
     id: 1,                              // 連番（詳細ページのURLに使う）
-    title: '迷宮脱出ゲーム',
-    genre: '3Dパズルアクション',
+    title: 'トレジャーマジック',
+    genre: '3Dアクション',
     category: 'game',
     thumbnail: "/images/games/tech_thumb.png",                    // '/images/work1.png'
     screenshots: [],                    // ['/images/w1-1.png', '/images/w1-2.gif']
     description: '作品の概要説明...',
     tags: ['Unity', 'C#', 'ProceduralGeneration'],
     platform: ['Windows', 'WebGL'],
-    period: '2025年10月〜2026年1月（3ヶ月）',
-    team: '個人制作',
-    role: 'プログラマー / レベルデザイナー（全工程）',
-    github: 'https://github.com/username/repo',
-    link: 'https://example.com/',                         // 公開URLがある場合
+    period: '2025年5月〜2025年10月（5ヶ月）',
+    team: 'チーム製作（6人）',
+    role: 'プログラマー ',
+    github: '',
+    link: '',                         // 公開URLがある場合
     venues: [                           // 出展・公開先（複数可）
       { name: '学校 卒業制作展示会', date: '2026年2月' },
     ],
@@ -157,56 +157,32 @@ export const works: Work[] = [
     designNotes: '設計上の工夫...',
     implementationTheme: '実装解説テーマ（1文）',
     troubleshooting: '詰まった問題と解決策...',
-    performance: 'パフォーマンス改善の工夫...',
+    performance: 'バグのないように',
   },
-  {
+ {
     id: 2,                              // 連番（詳細ページのURLに使う）
-    title: '迷宮脱出ゲーム2',
-    genre: '3Dパズルアクション',
+    title: 'MURWA',
+    genre: '3Dアクション',
     category: 'game',
     thumbnail: "",                    // '/images/work1.png'
     screenshots: [],                    // ['/images/w1-1.png', '/images/w1-2.gif']
-    description: '作品の概要説明...',
+    description: '敵を倒しつつ次のマップに行き、ゴールを目指すゲームです。',
     tags: ['Unity', 'C#', 'ProceduralGeneration'],
     platform: ['Windows', 'WebGL'],
-    period: '2025年10月〜2026年1月（3ヶ月）',
+    period: '2025年10月〜2026年2月（4ヶ月）',
     team: '個人制作',
     role: 'プログラマー / レベルデザイナー（全工程）',
-    github: 'https://github.com/username/repo',
-    link: 'https://example.com/',                         // 公開URLがある場合
+    github: 'https://github.com/D6rrgvtd/MURWA',
+    link: '',                         // 公開URLがある場合
     venues: [                           // 出展・公開先（複数可）
-      { name: '学校 卒業制作展示会', date: '2026年2月' },
+      { name: '学校 合同ゲーム製作', date: '2026年2月' },
     ],
-    techPoints: 'こだわった技術ポイント...',
-    designNotes: '設計上の工夫...',
-    implementationTheme: '実装解説テーマ（1文）',
-    troubleshooting: '詰まった問題と解決策...',
+    techPoints: '飛ぶたびにマップが変わる',
+    designNotes: 'ランダム生成',
+    implementationTheme: 'ローグライク要素を入れたかった',
+    troubleshooting: 'ほかの要素',
     performance: null,
   },
-  {
-    id: 3,                              // 連番（詳細ページのURLに使う）
-    title: '迷宮脱出ゲーム3',
-    genre: '3Dパズルアクション',
-    category: 'game',
-    thumbnail: "",                    // '/images/work1.png'
-    screenshots: [],                    // ['/images/w1-1.png', '/images/w1-2.gif']
-    description: '作品の概要説明...',
-    tags: ['Unity', 'C#', 'ProceduralGeneration'],
-    platform: ['Windows', 'WebGL'],
-    period: '2025年10月〜2026年1月（3ヶ月）',
-    team: '個人制作',
-    role: 'プログラマー / レベルデザイナー（全工程）',
-    github: 'https://github.com/username/repo',
-    link: 'https://example.com/',                         // 公開URLがある場合
-    venues: [                           // 出展・公開先（複数可）
-      { name: '学校 卒業制作展示会', date: '2026年2月' },
-    ],
-    techPoints: 'こだわった技術ポイント...',
-    designNotes: '設計上の工夫...',
-    implementationTheme: '実装解説テーマ（1文）',
-    troubleshooting: '詰まった問題と解決策...',
-    performance: 'パフォーマンス改善の工夫...',
-  }, // 配列ごとに作品情報を作ってく.
 ]
 
 
@@ -224,39 +200,27 @@ export const certifications: Certification[] = [
 
 export const timeline: TimelineItem[] = [
   {
-    year: "2022年3月",
-    event: "群馬県立高崎工業高等学校 卒業",
+    year: "2024年3月",
+    event: "京都府洛陽総合高等学校 卒業",
   },
   {
-    year: "2022年4月",
+    year: "2024年4月",
     event: "京都デザイン&テクノロジー専門学校 入学",
   },
   {
-    year: "2022年7月",
+    year: "2024年7月",
     event: "初めてUnityで2Dアクションゲームを個人制作",
   },
   {
-    year: "2023年2月",
-    event: "学内ゲームジャムに参加し、チーム制作で優秀賞を受賞",
+    year: "2025年10月",
+    event: "Unityを用いた3Dアクションゲームを完成",
   },
   {
-    year: "2023年9月",
-    event: "C++/DirectXを用いた2Dシューティングゲームを完成",
+    year: "2026年2月",
+    event: "個人製作3Dアクションゲームを製作",
   },
   {
-    year: "2024年3月",
-    event: "後期制作展にて卒業制作の3Dアクションゲームを出展",
-  },
-  {
-    year: "2024年8月",
-    event: "株式会社〇〇 にてゲームプログラマーとしてインターン参加",
-  },
-  {
-    year: "2025年1月",
-    event: "個人開発したモバイルゲームをストアにリリース",
-  },
-  {
-    year: "2026年3月",
+    year: "2027年3月",
     event: "京都デザイン&テクノロジー専門学校 卒業見込み",
   },
 ]
